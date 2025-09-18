@@ -1,1 +1,1 @@
-https://github.com/AlexanderKoldin/ono-tebe-nado
+https://github.com/username/ono-tebe-nado-fd
