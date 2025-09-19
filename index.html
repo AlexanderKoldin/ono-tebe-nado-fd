@@ -10,54 +10,38 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <!-- TODO Пытаюсь отправить на проверку -->
-
     <header class="header">
-      <div class="header__container">
-        <nav class="header__nav nav">
-          <ul class="nav__list">
-            <li class="nav__item nav__item--active">
-              <a class="nav__link" href="#0">главная</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#0">посмотреть лоты</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#0">об аукционе</a>
-            </li>
-          </ul>
-        </nav>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--active">
+            <a class="nav__link" href="#0">главная</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#0">посмотреть лоты</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#0">об аукционе</a>
+          </li>
+        </ul>
+      </nav>
 
-        <a class="header__logo" href="#0">
-          <img
-            class="header__logo-img"
-            src="./images/logo-black.svg"
-            alt="Логотип"
-          />
-        </a>
+      <a class="header__logo" href="#0">
+        <img
+          class="header__logo-img"
+          src="./images/logo-black.svg"
+          alt="Логотип"
+        />
+      </a>
 
-        <div class="header__contacts contacts">
-          <address class="contacts__address">
-            <ul class="contacts__list">
-              <li class="contacts__item">
-                <a class="contacts__link" href="tel:+99995555555"
-                  >+9 999 555 5555</a
-                >
-              </li>
-              <li class="contacts__item">
-                <a class="contacts__link" href="mailto:info@sobaka.ge"
-                  >info@sobaka.ge</a
-                >
-              </li>
-              <li class="contacts__item">
-                <span class="contacts__text"
-                  >наб. Принсенграхт 263- 265, Амстердам</span
-                >
-              </li>
-            </ul>
-          </address>
-        </div>
-      </div>
+      <!-- Исправил блок с адресом -->
+
+      <address class="contacts contacts_place_header">
+        <a class="contacts__link" href="tel:+99995555555">+9 999 555 5555</a>
+        <a class="contacts__link" href="mailto:info@sobaka.ge"
+          >info@sobaka.ge</a
+        >
+        <p class="contacts__text">наб. Принсенграхт 263- 265, Амстердам</p>
+      </address>
     </header>
 
     <main>
@@ -185,27 +169,12 @@
     <!-- футер -->
 
     <footer class="footer">
-      <address class="footer__address">
-        <ul class="footer__contacts-list">
-          <li class="footer__contacts-item">
-            <a class="footer__link footer__link--phone" href="tel:+99995555555">
-              +9 999 555 5555
-            </a>
-          </li>
-          <li class="footer__contacts-item">
-            <a
-              class="footer__link footer__link--email"
-              href="mailto:info@sobaka.ge"
-            >
-              info@sobaka.ge
-            </a>
-          </li>
-          <li class="footer__contacts-item">
-            <span class="footer__text footer__text--address">
-              наб. Принсенграхт 263-265, Амстердам
-            </span>
-          </li>
-        </ul>
+      <address class="contacts contacts_place_footer">
+        <a class="contacts__link" href="tel:+99995555555">+9 999 555 5555</a>
+        <a class="contacts__link" href="mailto:info@sobaka.ge"
+          >info@sobaka.ge</a
+        >
+        <p class="contacts__text">наб. Принсенграхт 263- 265, Амстердам</p>
       </address>
 
       <nav class="footer__menu">

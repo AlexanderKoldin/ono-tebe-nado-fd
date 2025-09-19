@@ -1,4 +1,4 @@
-.header__container {
+.header {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   align-items: center;
@@ -35,19 +35,26 @@
   display: block;
 }
 
-.contacts__item {
+.contacts {
   display: flex;
+  flex-direction: column;
   justify-self: flex-end;
-  width: 240px;
-  font-size: 18px;
 
-  font-weight: 400;
+  font-size: 18px;
   line-height: 135%;
   font-style: normal;
 }
 .contacts__link {
   text-decoration: underline;
   text-underline-offset: 4px;
+  display: block;
+}
+
+.contacts_place_header {
+  max-width: 240px;
+}
+.contacts_place_footer {
+  max-width: 242px;
 }
 
 /* Делаем Cover */
