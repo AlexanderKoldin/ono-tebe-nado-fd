@@ -12,18 +12,25 @@
   font-size: 18px;
   font-weight: 400;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav__item {
-  text-underline-offset: 4px;
   list-style: circle;
+  text-underline-offset: 4px;
 }
 
-.nav__item--active {
+.nav__item.is-active {
   list-style: none;
 }
 
-.nav__item--active .nav__link {
+.nav__link {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.nav__item.is-active .nav__link {
   text-decoration: none;
 }
 
@@ -31,33 +38,28 @@
   justify-self: center;
   width: 135px;
 }
+
 .header__logo-img {
   display: block;
 }
 
-.contacts {
+.address {
   display: flex;
   flex-direction: column;
   justify-self: flex-end;
-
   font-size: 18px;
   line-height: 135%;
   font-style: normal;
 }
-.contacts__link {
+
+.address__link {
   text-decoration: underline;
   text-underline-offset: 4px;
-  display: block;
 }
 
-.contacts_place_header {
-  max-width: 240px;
+.header .address {
+  max-width: 236px;
 }
-.contacts_place_footer {
-  max-width: 242px;
-}
-
-/* Делаем Cover */
 
 .cover {
   position: relative;
@@ -65,6 +67,11 @@
   min-height: 757px;
   margin-bottom: 180px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 165px 50px 50px;
 }
 
 .cover__image {
@@ -84,15 +91,11 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.cover__content {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  min-height: 757px;
-  padding: 165px 50px 50px;
+.card .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .cover__title {
@@ -105,6 +108,7 @@
   line-height: 115%;
   letter-spacing: 30px;
   text-transform: uppercase;
+  z-index: 3;
 }
 
 .aligned-text {
@@ -129,8 +133,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin-top: auto;
+  z-index: 3;
 }
 
 .cover__description-text {
@@ -139,7 +143,6 @@
   font-weight: 400;
   line-height: 28px;
   text-transform: uppercase;
-
   word-spacing: 18px;
 }
 
@@ -154,11 +157,10 @@
   cursor: pointer;
 }
 
-/* Делаем карточки лотов */
-
 .lots {
   margin-bottom: 120px;
 }
+
 .lots__title {
   margin-bottom: 27px;
   margin-left: 65px;
@@ -166,6 +168,7 @@
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .lots__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 334px));
@@ -174,18 +177,20 @@
   margin-bottom: 30px;
   list-style: none;
 }
+
 .lots__item {
   position: relative;
-
   display: flex;
   flex-direction: column;
-  height: 596px;
+  min-height: 596px;
   padding: 48px 40px;
 }
+
 .lots__link {
   height: 100%;
   text-decoration: none;
 }
+
 .card {
   display: flex;
   flex-direction: column;
@@ -193,38 +198,44 @@
   gap: 25px;
   height: 100%;
 }
+
 .card_type_film {
   background-image: url(../images/card-lot-01.jpg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
+
 .card_type_book {
   background-image: url(../images/card-lot-02.jpg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
+
 .card_type_picture {
   background-image: url(../images/card-lot-03.jpg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
+
 .card__title {
   z-index: 2;
   color: #fff;
   font-size: 22px;
   font-weight: 700;
-
   line-height: 120%;
   text-decoration: underline;
-  text-transform: uppercase;
   text-decoration-skip-ink: none;
+  text-transform: uppercase;
 }
+
 .card__text {
   z-index: 2;
   color: #fff;
   font-size: 20px;
   font-weight: 400;
-
   line-height: 120%;
 }
 
@@ -233,21 +244,20 @@
   color: #000;
   font-size: 20px;
   font-weight: 400;
-
   text-underline-offset: 4px;
 }
-
-/* аукцион */
 
 .about {
   margin-bottom: 180px;
 }
+
 .about__column {
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: start;
   gap: 27px;
 }
+
 .about__logo {
   display: flex;
   justify-content: center;
@@ -279,6 +289,7 @@
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .about__text {
   display: flex;
   flex-direction: column;
@@ -290,38 +301,23 @@
   color: #000;
   font-size: 20px;
   font-weight: 400;
-
-  /* line-height: 24px; */
   line-height: 120%;
 }
-
-/* футер */
 
 .footer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 82px;
-  padding-right: 52px;
-  padding-left: 52px;
+  padding: 0 52px;
 }
-.footer__address {
+
+.footer .address {
+  max-width: 242px;
+}
+
+.footer__menu {
   display: flex;
-  justify-content: center;
-}
-
-.footer__contacts-item {
-  display: flex;
-
-  width: 240px;
-  font-size: 18px;
-
-  font-weight: 400;
-  line-height: 135%;
-  font-style: normal;
-}
-.footer__link {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  flex-direction: column;
 }
 
 .footer__menu-list {
@@ -330,21 +326,49 @@
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-
   font-weight: 400;
-
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__menu-item {
+  text-underline-offset: 4px;
 }
 
 .footer__menu-link {
+  text-decoration: underline;
   text-underline-offset: 4px;
+  color: inherit;
 }
-.footer__menu-link--active {
+
+.footer__menu-link.is-active {
   text-decoration: none;
+}
+
+.footer__social {
+  display: flex;
+  align-items: flex-start;
 }
 
 .footer__social-list {
   display: flex;
   gap: 46px;
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__social-item {
+  display: flex;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+}
+
+.footer__social-icon {
+  width: 48px;
+  height: 48px;
 }
